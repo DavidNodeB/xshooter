@@ -4,13 +4,12 @@
 class Player {
 private:
     int health; 
-    sf::Vector2f pos; 
+    sf::Vector2f position; 
     sf::Sprite sprite; 
 public:
     Player(const std::string &path); 
-
-    void setPosition(const sf::Vector2f &pos); 
-    void setSize(const sf::IntRect &size); 
+    void setPos(const sf::Vector2f &pos); 
+    void setSpriteSize(sf::IntRect &size); 
     void loadTexture(const std::string &path); 
     void render(sf::RenderWindow &window);
 }; 

@@ -8,19 +8,21 @@
 
 sf::Texture texture; 
 
-Player::Player(const std::string &path) : sprite(texture) {
-    loadTexture(path); 
+Player::Player(const std::string &assetPath) : sprite(texture) {
+    loadTexture(assetPath); 
 }
 
 void Player::loadTexture(const std::string &path) {
     if(!texture.loadFromFile(path))
     {
         throw std::runtime_error("Failed to load player texture"); 
-    } else 
-    {
-        std::cout << "Loaded player textures" << "\n"; 
     }
     sprite.setTexture(texture);
+}
+
+void Player::setPos(const sf::Vector2f &pos) {
+    position = pos; 
+    sprite.setPosition(position); 
 }
 
 // void Player::setPosition(const sf::Vector2f &pos) {

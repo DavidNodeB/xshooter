@@ -1,5 +1,4 @@
 #include <SFML/Graphics.hpp>
-#include <SFML/System/Clock.hpp>
 #include "main.hpp"
 #include "player.hpp"
 #include <iostream> 
@@ -13,8 +12,8 @@ int main()
     // ---------------------INITIALIZE--------------------------
 
     // ---------------------LOAD--------------------------
+    Player p1("assets/player/textures/goblin.png"); 
 
-    Player p1("assets/player/textures/goblin.png");  
     // ---------------------LOAD--------------------------
     while (window.isOpen())
     {
