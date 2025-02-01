@@ -30,5 +30,6 @@ void Player::setPos(const sf::Vector2f &pos) {
 // }
 
 void Player::render(sf::RenderWindow &window) {
-    window.draw(sprite); 
+
+    window.draw(sprite);
 }
