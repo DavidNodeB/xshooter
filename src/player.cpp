@@ -3,21 +3,19 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <stdexcept>
+ 
 
 
-
-sf::Texture texture; 
-
-Player::Player(const std::string &assetPath) : sprite(texture) {
-    loadTexture(assetPath); 
+Player::Player (sf::Texture &texture) : sprite(texture) {
+    
 }
 
-void Player::loadTexture(const std::string &path) {
+void Player::loadTexture(const std::string &path, sf::Texture &texture) {
     if(!texture.loadFromFile(path))
     {
         throw std::runtime_error("Failed to load player texture"); 
     }
-    sprite.setTexture(texture);
+
 }
 
 void Player::setPos(const sf::Vector2f &pos) {
@@ -30,6 +28,5 @@ void Player::setPos(const sf::Vector2f &pos) {
 // }
 
 void Player::render(sf::RenderWindow &window) {
-
     window.draw(sprite);
 }
