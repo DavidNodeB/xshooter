@@ -27,6 +27,16 @@ void Player::setPos(const sf::Vector2f &pos) {
 
 // }
 
+void Player::setSize(const sf::Vector2f &size)  {
+    spriteSize = size; 
+    sprite.setScale(spriteSize); 
+}
+
+void Player::setRect(const sf::IntRect &sRect) {
+    setRectangle = sRect; 
+    sprite.setTextureRect(setRectangle); 
+} 
+
 void Player::render(sf::RenderWindow &window) {
     window.draw(sprite);
 }

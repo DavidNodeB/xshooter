@@ -28,8 +28,11 @@ int main()
     auto window = sf::RenderWindow(sf::VideoMode({screenH, screenW}), windowTitle, sf::Style::Default, sf::State::Windowed, settings);
     
     sf::Texture playerTexture;
-    playerTexture.loadFromFile("assets/player/textures/goblin.png");
+    playerTexture.loadFromFile("assets/player/textures/trooper_idle.png");
     Player p1(playerTexture);
+    p1.setSize(sf::Vector2f(1.5f, 1.5f)); 
+    p1.setRect(sf::IntRect({0,0}, {32, 32})); 
+
 
     while (window.isOpen())
     {
