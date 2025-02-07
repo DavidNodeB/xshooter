@@ -1,28 +1,25 @@
-#ifndef GAME_H
-#define GAME_H
+#ifndef GAME_HPP
+#define GAME_HPP
 
 #include <SFML/Graphics.hpp>
+#include "spritehandler.hpp"
 
 class Game {
-private: 
-    unsigned int screenH;
-    unsigned int screenW; 
+private:
+    sf::RenderWindow* window;
+    sf::VideoMode vm;
     std::string title;
-    sf::VideoMode vm; 
-    sf::RenderWindow *window;  
-
-    void initWindow();
-
-    void pollEvents();
-
-    void update(); 
-
-    void render();
+    sf::Texture texture; 
+    SpriteHandler sh;
+    int screenW, screenH;
 public:
     Game();
-    ~Game();  
+    ~Game();
+    void initWindow();
+    void pollEvents();
+    void update();
+    void render();
+    void run();
+};
 
-    void run(); 
-}; 
-
-#endif
+#endif // GAME_HPP
